@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Piece_gen.html">
+<link rel="next" href="SRS.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Animation" rel="Chapter" href="Animation.html">
+<link title="Authors" rel="Chapter" href="Authors.html">
+<link title="Board" rel="Chapter" href="Board.html">
+<link title="Game_screen" rel="Chapter" href="Game_screen.html">
+<link title="Game_state" rel="Chapter" href="Game_state.html">
+<link title="Input" rel="Chapter" href="Input.html">
+<link title="Main" rel="Chapter" href="Main.html">
+<link title="Piece_gen" rel="Chapter" href="Piece_gen.html">
+<link title="Piece_queue" rel="Chapter" href="Piece_queue.html">
+<link title="SRS" rel="Chapter" href="SRS.html">
+<link title="Tetromino" rel="Chapter" href="Tetromino.html">
+<link title="Utils" rel="Chapter" href="Utils.html"><title>Piece_queue</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Piece_gen.html" title="Piece_gen">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="SRS.html" title="SRS">Next</a>
+</div>
+<h1>Module <a href="type_Piece_queue.html">Piece_queue</a></h1>
+
+<pre><span id="MODULEPiece_queue"><span class="keyword">module</span> Piece_queue</span>: <code class="code">sig</code> <a href="Piece_queue.html">..</a> <code class="code">end</code></pre><div class="info module top">
+<div class="info-desc">
+<p>The abstract data type representign a queue that holds upcoming tetrominos</p>
+</div>
+</div>
+<hr width="100%">
+
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
+
+
+<pre><span id="VALinit"><span class="keyword">val</span> init</span> : <code class="type">int -> <a href="Piece_queue.html#TYPEt">t</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">init depth</code> is a fresh piece queue that holds <code class="code">depth</code> number of upcoming
+ pieces.</p>
+</div>
+</div>
+
+<pre><span id="VALnext_piece"><span class="keyword">val</span> next_piece</span> : <code class="type"><a href="Piece_queue.html#TYPEt">t</a> -> <a href="Tetromino.html#TYPEt">Tetromino.t</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">next_piece queue</code> is the next piece in <code class="code">queue</code>. This function modifies the
+ queue mutably by popping the next piece off the <code class="code">queue</code>.</p>
+</div>
+</div>
+
+<pre><span id="VALto_list"><span class="keyword">val</span> to_list</span> : <code class="type"><a href="Piece_queue.html#TYPEt">t</a> -> <a href="Tetromino.html#TYPEt">Tetromino.t</a> list</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">to_list queue</code> is the <code class="code">queue</code> as a list. Order is preserved.</p>
+</div>
+</div>
+</body></html>

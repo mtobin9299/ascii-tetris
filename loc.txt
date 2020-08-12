@@ -1,0 +1,67 @@
+Our final implementation fell short of the line of code requirement. This
+is not due to our lack of motivation or effort, but instead largely due to the
+obstacles we ran into when implementing Tetris. The original idea for the game
+was to make it run entirely inside the terminal. This immediately posed some
+technical hurdles with which we overcame (with much effort). Normally, making a
+game that prints to the terminal as its main mode of rendering wouldn't be so
+difficult (as seen in A2/A3). However, unlike most other projects, we had the
+more unique challenge of simulating a continous time application versus a
+discrete time application (i.e. continual gameplay vs. turn-based). This made
+rendering much harder because we had to print to the screen at a consistent 60
+frames per second, which as you can imagine would look terrible if not done
+correctly.
+
+While we were able to fix most rendering problems regarding printing to the
+terminal, we still weren't happy with the implementation. Keeping the game
+running in the terminal was severely limiting to what we could do. For one,
+although we could print continously the terminal, achieving at least 60 FPS
+during gameplay is not very possible (most terminals don't use GPU accelerated
+rendering). Furthermore, since we were relying on characters being inputted into
+the terminal as input to the game, this also imposed limitations. For example,
+any key that didn't have a visual representation couldn't be used as input (like
+the arrow keys). Also, holding down multiple keys at once wasn't possible
+because there was only one input stream being read from synchronously. This
+meant that performing special moves that required both movement and rotation
+weren't possible (like soft-dropping a piece and rotating it into place).
+Lastly, holding down keys to speed up movement across the board wasn't
+configurable because of the delay the OS imposes on key presses before repeating
+them. 
+
+All of this is to say that if we wanted to expand our implementation by adding
+things such as different gameplay modes, time challenges, local multiplayer,
+etc, we needed to move the game out of the terminal. So, this is when we started
+tinkering with SDL to try and achieve this.
+
+Now, under normal circumstances installing SDL should be as easy as running
+opam install ocamlsdl2, but this proved far from the reality. Since SDL is a C
+library, to install and use SDL you first have to download the actual C library
+and then install the bindings. On Ubuntu 18.04, the version of SDL2 available
+is 2.0.8. But, out of the two bindings in OCaml available to interface with
+SDL2, both had problems with this particular version. One set of bindings,
+OCamlSDL2 only works with SDL2 version 2.0.9 and higher. The other one, Tsdl,
+works with version 2.0.5 and higher (but actually not really). After wasting
+probably 6-7 hours trying to get out of this versioning nightmare, we decided
+that at the root of the problem was the SDL version. So, we built SDL2 from
+source.
+
+Building from source wasn't too much of an issue, but documentation was scarce.
+In the process of building both SDL and the bindings from source we encountered
+many obscure build errors with almost no help from the internet. After a few
+more hours of fiddling around, we finally stumbled into a somewhat working
+solution. However, after rewriting a lot of the codebase to work with the newly
+installed SDL library, we ran into a major issue: a few of the SDL rendering
+functions just wouldn't work. Not knowing if it was a driver issue or an OpenGL
+issue or both, we finally just gave up and reverted everything back to how it
+was.
+
+The reason we wrote this all out was to make it clear that many hours were spent
+trying to get our tetris game to the next level. We spent close to 15
+hours trying just to get SDL installed and working before giving up, ultimately
+netting us 0 lines of added code. So, while our LoC may fall short,
+our effort certainly did not. We desperately wanted to expand our implementation
+as we had in mind many cool features, but without the support on OCaml's side,
+doing this proved nearly impossible. We hope this explanation is adequate in
+describing why we fell short, and why we shouldn't be penalized. Thank you for
+reading.
+
+- Scott, Mike, Matthew

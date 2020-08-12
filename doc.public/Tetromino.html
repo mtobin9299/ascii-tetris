@@ -1,0 +1,216 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Start" href="index.html">
+<link rel="previous" href="SRS.html">
+<link rel="next" href="Utils.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Animation" rel="Chapter" href="Animation.html">
+<link title="Authors" rel="Chapter" href="Authors.html">
+<link title="Board" rel="Chapter" href="Board.html">
+<link title="Game_screen" rel="Chapter" href="Game_screen.html">
+<link title="Game_state" rel="Chapter" href="Game_state.html">
+<link title="Input" rel="Chapter" href="Input.html">
+<link title="Main" rel="Chapter" href="Main.html">
+<link title="Piece_gen" rel="Chapter" href="Piece_gen.html">
+<link title="Piece_queue" rel="Chapter" href="Piece_queue.html">
+<link title="SRS" rel="Chapter" href="SRS.html">
+<link title="Tetromino" rel="Chapter" href="Tetromino.html">
+<link title="Utils" rel="Chapter" href="Utils.html"><title>Tetromino</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="SRS.html" title="SRS">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="Utils.html" title="Utils">Next</a>
+</div>
+<h1>Module <a href="type_Tetromino.html">Tetromino</a></h1>
+
+<pre><span id="MODULETetromino"><span class="keyword">module</span> Tetromino</span>: <code class="code">sig</code> <a href="Tetromino.html">..</a> <code class="code">end</code></pre><div class="info module top">
+<div class="info-desc">
+<p><code class="code">orientation</code> is the type representing the four standard orientations
+   a tetromino can assume</p>
+</div>
+</div>
+<hr width="100%">
+
+<pre><code><span id="TYPEorientation"><span class="keyword">type</span> <code class="type"></code>orientation</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTorientation.Zero"><span class="constructor">Zero</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTorientation.Right"><span class="constructor">Right</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTorientation.Two"><span class="constructor">Two</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTorientation.Left"><span class="constructor">Left</span></span></code></td>
+
+</tr></table>
+
+
+
+<pre><code><span id="TYPEpiece_type"><span class="keyword">type</span> <code class="type"></code>piece_type</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTpiece_type.I"><span class="constructor">I</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTpiece_type.J"><span class="constructor">J</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTpiece_type.L"><span class="constructor">L</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTpiece_type.T"><span class="constructor">T</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTpiece_type.S"><span class="constructor">S</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTpiece_type.Z"><span class="constructor">Z</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTpiece_type.O"><span class="constructor">O</span></span></code></td>
+
+</tr></table>
+
+<div class="info ">
+<div class="info-desc">
+<p><code class="code">piece_type</code> is the type representing the seven different pieces there
+   are in tetris</p>
+</div>
+</div>
+
+
+<pre><span id="TYPEpos"><span class="keyword">type</span> <code class="type"></code>pos</span> = <code class="type">int * int</code> </pre>
+<div class="info ">
+<div class="info-desc">
+<p><code class="code">pos</code> is the type that represents an x, y coord pair</p>
+</div>
+</div>
+
+
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
+
+
+<pre><span id="VALinit_tetromino"><span class="keyword">val</span> init_tetromino</span> : <code class="type"><a href="Tetromino.html#TYPEpos">pos</a> -> <a href="Tetromino.html#TYPEpiece_type">piece_type</a> -> <a href="Tetromino.html#TYPEt">t</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">init_tetromino pos piece_type</code> is a new tetromino with position <code class="code">pos</code> of
+    type <code class="code">piece_type</code></p>
+</div>
+</div>
+
+<pre><span id="VALpiece_type"><span class="keyword">val</span> piece_type</span> : <code class="type"><a href="Tetromino.html#TYPEt">t</a> -> <a href="Tetromino.html#TYPEpiece_type">piece_type</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">piece_type tetromino</code> is the piece type of <code class="code">tetromino</code></p>
+</div>
+</div>
+
+<pre><span id="VALorientation"><span class="keyword">val</span> orientation</span> : <code class="type"><a href="Tetromino.html#TYPEt">t</a> -> <a href="Tetromino.html#TYPEorientation">orientation</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">orientation tetromino</code> is the orientation of <code class="code">tetromino</code></p>
+</div>
+</div>
+
+<pre><span id="VALoffsets"><span class="keyword">val</span> offsets</span> : <code class="type"><a href="Tetromino.html#TYPEt">t</a> -> (<a href="Tetromino.html#TYPEorientation">orientation</a> * <a href="Tetromino.html#TYPEpos">pos</a> list) list</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">offsets tetromino</code> is the standard list of all rotation offsets for each 
+   possible orientation of <code class="code">tetromino</code></p>
+</div>
+</div>
+
+<pre><span id="VALinitial_positions"><span class="keyword">val</span> initial_positions</span> : <code class="type"><a href="Tetromino.html#TYPEt">t</a> -> <a href="Tetromino.html#TYPEpos">pos</a> list</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">initial_positions tetromino</code> is the list of the relative, initial positions 
+   of the minos that make up <code class="code">tetromino</code></p>
+</div>
+</div>
+
+<pre><span id="VALpos"><span class="keyword">val</span> pos</span> : <code class="type"><a href="Tetromino.html#TYPEt">t</a> -> <a href="Tetromino.html#TYPEpos">pos</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">pos tetromino</code> is the world position of <code class="code">tetromino</code></p>
+</div>
+</div>
+
+<pre><span id="VALminos_world_positions"><span class="keyword">val</span> minos_world_positions</span> : <code class="type"><a href="Tetromino.html#TYPEt">t</a> -> <a href="Tetromino.html#TYPEpos">pos</a> list</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">minos_world_positions tetromino</code> is the list of world positions of the minos
+    that make up <code class="code">tetromino</code></p>
+</div>
+</div>
+
+<pre><span id="VALrotate_minos"><span class="keyword">val</span> rotate_minos</span> : <code class="type"><a href="Tetromino.html#TYPEorientation">orientation</a> -> <a href="Tetromino.html#TYPEpos">pos</a> list -> <a href="Tetromino.html#TYPEpos">pos</a> list</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">rotate_minos orientation minos</code> is the list of minos with relative positions
+    of <code class="code">minos</code> in the orientation of <code class="code">orientation</code></p>
+</div>
+</div>
+
+<pre><span id="VALchange_orientation"><span class="keyword">val</span> change_orientation</span> : <code class="type"><a href="Tetromino.html#TYPEorientation">orientation</a> -> <a href="Tetromino.html#TYPEt">t</a> -> <a href="Tetromino.html#TYPEt">t</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">change_orientation orientation tetromino</code> is <code class="code">tetromino</code> with new orientation
+   <code class="code">orientation</code></p>
+</div>
+</div>
+
+<pre><span id="VALchange_pos"><span class="keyword">val</span> change_pos</span> : <code class="type"><a href="Tetromino.html#TYPEpos">pos</a> -> <a href="Tetromino.html#TYPEt">t</a> -> <a href="Tetromino.html#TYPEt">t</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">change_pos pos tetromino</code> is <code class="code">tetromino</code> with new position
+   <code class="code">pos</code></p>
+</div>
+</div>
+
+<pre><span id="VALmove"><span class="keyword">val</span> move</span> : <code class="type"><a href="Tetromino.html#TYPEpos">pos</a> -> <a href="Tetromino.html#TYPEt">t</a> -> <a href="Tetromino.html#TYPEt">t</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">move delta_pos tetromino</code> is <code class="code">tetromino</code> with <code class="code">delta_pos</code> added to its pos</p>
+</div>
+</div>
+</body></html>

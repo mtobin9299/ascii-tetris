@@ -1,0 +1,12 @@
+In order to run the game, simply run "make".
+
+If the game doesn't launch and throws a fatal exception, it is
+most likely your terminal size. Simply make your terminal larger
+and it should work. On the other hand, if your game is really
+laggy and has low (0-20 fps), try making your terminal a bit smaller.
+Bringing the terminal as tight to the board while still giving enough
+room to run gives the best results.
+
+Note, if you do not use q to quit the game (but rather ctrl c), 
+there will be side effects in your terminal such as hidden text
+and cursor.

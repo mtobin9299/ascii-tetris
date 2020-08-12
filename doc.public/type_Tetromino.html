@@ -1,0 +1,42 @@
+<html><head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Start" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Animation" rel="Chapter" href="Animation.html">
+<link title="Authors" rel="Chapter" href="Authors.html">
+<link title="Board" rel="Chapter" href="Board.html">
+<link title="Game_screen" rel="Chapter" href="Game_screen.html">
+<link title="Game_state" rel="Chapter" href="Game_state.html">
+<link title="Input" rel="Chapter" href="Input.html">
+<link title="Main" rel="Chapter" href="Main.html">
+<link title="Piece_gen" rel="Chapter" href="Piece_gen.html">
+<link title="Piece_queue" rel="Chapter" href="Piece_queue.html">
+<link title="SRS" rel="Chapter" href="SRS.html">
+<link title="Tetromino" rel="Chapter" href="Tetromino.html">
+<link title="Utils" rel="Chapter" href="Utils.html"><title>Tetromino</title>
+</head>
+<body>
+<code class="code"><span class="keyword">sig</span><br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;orientation&nbsp;=&nbsp;<span class="constructor">Zero</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Right</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Two</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Left</span><br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;piece_type&nbsp;=&nbsp;<span class="constructor">I</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">J</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">L</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">T</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">S</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Z</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">O</span><br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;pos&nbsp;=&nbsp;int&nbsp;*&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;init_tetromino&nbsp;:&nbsp;<span class="constructor">Tetromino</span>.pos&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Tetromino</span>.piece_type&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Tetromino</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;piece_type&nbsp;:&nbsp;<span class="constructor">Tetromino</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Tetromino</span>.piece_type<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;orientation&nbsp;:&nbsp;<span class="constructor">Tetromino</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Tetromino</span>.orientation<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;offsets&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Tetromino</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(<span class="constructor">Tetromino</span>.orientation&nbsp;*&nbsp;<span class="constructor">Tetromino</span>.pos&nbsp;list)&nbsp;list<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;initial_positions&nbsp;:&nbsp;<span class="constructor">Tetromino</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Tetromino</span>.pos&nbsp;list<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;pos&nbsp;:&nbsp;<span class="constructor">Tetromino</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Tetromino</span>.pos<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;minos_world_positions&nbsp;:&nbsp;<span class="constructor">Tetromino</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Tetromino</span>.pos&nbsp;list<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;rotate_minos&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Tetromino</span>.orientation&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Tetromino</span>.pos&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Tetromino</span>.pos&nbsp;list<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;change_orientation&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Tetromino</span>.orientation&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Tetromino</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Tetromino</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;change_pos&nbsp;:&nbsp;<span class="constructor">Tetromino</span>.pos&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Tetromino</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Tetromino</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;move&nbsp;:&nbsp;<span class="constructor">Tetromino</span>.pos&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Tetromino</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Tetromino</span>.t<br>
+<span class="keyword">end</span></code></body></html>

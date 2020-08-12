@@ -1,0 +1,155 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Game_screen.html">
+<link rel="next" href="Input.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Animation" rel="Chapter" href="Animation.html">
+<link title="Authors" rel="Chapter" href="Authors.html">
+<link title="Board" rel="Chapter" href="Board.html">
+<link title="Game_screen" rel="Chapter" href="Game_screen.html">
+<link title="Game_state" rel="Chapter" href="Game_state.html">
+<link title="Input" rel="Chapter" href="Input.html">
+<link title="Main" rel="Chapter" href="Main.html">
+<link title="Piece_gen" rel="Chapter" href="Piece_gen.html">
+<link title="Piece_queue" rel="Chapter" href="Piece_queue.html">
+<link title="SRS" rel="Chapter" href="SRS.html">
+<link title="Tetromino" rel="Chapter" href="Tetromino.html">
+<link title="Utils" rel="Chapter" href="Utils.html"><title>Game_state</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Game_screen.html" title="Game_screen">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="Input.html" title="Input">Next</a>
+</div>
+<h1>Module <a href="type_Game_state.html">Game_state</a></h1>
+
+<pre><span id="MODULEGame_state"><span class="keyword">module</span> Game_state</span>: <code class="code">sig</code> <a href="Game_state.html">..</a> <code class="code">end</code></pre><div class="info module top">
+<div class="info-desc">
+<p>The abstract state type</p>
+</div>
+</div>
+<hr width="100%">
+
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
+
+
+<pre><span id="VALinit"><span class="keyword">val</span> init</span> : <code class="type">unit -> <a href="Game_state.html#TYPEt">t</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">init ()</code> is the intial state of a new game</p>
+</div>
+</div>
+
+<pre><span id="VALboard"><span class="keyword">val</span> board</span> : <code class="type"><a href="Game_state.html#TYPEt">t</a> -> <a href="Board.html#TYPEt">Board.t</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">board st</code> is the current board of <code class="code">st</code></p>
+</div>
+</div>
+
+<pre><span id="VALactive_tetromino"><span class="keyword">val</span> active_tetromino</span> : <code class="type"><a href="Game_state.html#TYPEt">t</a> -> <a href="Tetromino.html#TYPEt">Tetromino.t</a> option</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">active_tetromino st</code> is the current active tetromino option of <code class="code">st</code></p>
+</div>
+</div>
+
+<pre><span id="VALhold_tetromino"><span class="keyword">val</span> hold_tetromino</span> : <code class="type"><a href="Game_state.html#TYPEt">t</a> -> <a href="Tetromino.html#TYPEt">Tetromino.t</a> option</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">hold_tetromino st</code> is the current hold tetromino option of <code class="code">st</code></p>
+</div>
+</div>
+
+<pre><span id="VALpiece_queue"><span class="keyword">val</span> piece_queue</span> : <code class="type"><a href="Game_state.html#TYPEt">t</a> -> <a href="Piece_queue.html#TYPEt">Piece_queue.t</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">piece_queue st</code> is the current piece queue of <code class="code">st</code></p>
+</div>
+</div>
+
+<pre><span id="VALscore"><span class="keyword">val</span> score</span> : <code class="type"><a href="Game_state.html#TYPEt">t</a> -> int</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">score st</code> is the current score of <code class="code">st</code></p>
+</div>
+</div>
+
+<pre><span id="VALgame_over"><span class="keyword">val</span> game_over</span> : <code class="type"><a href="Game_state.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">game_over st</code> is whether or not the game of <code class="code">st</code> has been won or lost</p>
+</div>
+</div>
+
+<pre><span id="VALlines_cleared"><span class="keyword">val</span> lines_cleared</span> : <code class="type"><a href="Game_state.html#TYPEt">t</a> -> int</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">lines_cleared st</code> is the number of lines that have been cleared in the
+    game of <code class="code">st</code></p>
+</div>
+</div>
+
+<pre><span id="VALlines_to_win"><span class="keyword">val</span> lines_to_win</span> : <code class="type"><a href="Game_state.html#TYPEt">t</a> -> int</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">lines_to_win st</code> is the number of lines that have to be cleared to win the
+    game of <code class="code">st</code></p>
+</div>
+</div>
+
+<pre><span id="VALlevel"><span class="keyword">val</span> level</span> : <code class="type"><a href="Game_state.html#TYPEt">t</a> -> int</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">level st</code> is the current level of the game of <code class="code">st</code></p>
+</div>
+</div>
+
+<pre><span id="VALget_game_status"><span class="keyword">val</span> get_game_status</span> : <code class="type"><a href="Game_state.html#TYPEt">t</a> -> string</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">get_game_status st</code> is the current game status of <code class="code">st</code></p>
+</div>
+</div>
+
+<pre><span id="VALanimation"><span class="keyword">val</span> animation</span> : <code class="type"><a href="Game_state.html#TYPEt">t</a> -> <a href="Animation.html#TYPEt">Animation.t</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">animation st</code> is the current active animation of <code class="code">st</code></p>
+</div>
+</div>
+
+<pre><span id="VALrotate"><span class="keyword">val</span> rotate</span> : <code class="type">bool -> <a href="Game_state.html#TYPEt">t</a> -> <a href="Game_state.html#TYPEt">t</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">rotate cw st</code> is the state with the active tetronimo rotated clockwise
+   if <code class="code">cw</code> or counterclockwise otherwise. If rotation is not possible
+   based on board state, returns <code class="code">st</code></p>
+</div>
+</div>
+
+<pre><span id="VALmove"><span class="keyword">val</span> move</span> : <code class="type">bool -> <a href="Game_state.html#TYPEt">t</a> -> <a href="Game_state.html#TYPEt">t</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">move right st</code> is the state with the active tetronimo moved right a space
+   if <code class="code">right</code> or left a sapce otherwise. If movement is not possible
+   based on board state, returns <code class="code">st</code></p>
+</div>
+</div>
+
+<pre><span id="VALhard_drop"><span class="keyword">val</span> hard_drop</span> : <code class="type"><a href="Game_state.html#TYPEt">t</a> -> <a href="Game_state.html#TYPEt">t</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">hard_drop st</code> is the state with the active tetromino of <code class="code">st</code> dropped instantly
+   and a new active tetronmino taken off the piece queue</p>
+</div>
+</div>
+
+<pre><span id="VALhold"><span class="keyword">val</span> hold</span> : <code class="type"><a href="Game_state.html#TYPEt">t</a> -> <a href="Game_state.html#TYPEt">t</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">hold st</code> is the state with the current active tetronmino of <code class="code">st</code> stored in
+    hold_tetromino and with a new active tetromino taken from the piece queue. 
+    If not possible, returns <code class="code">st</code>.</p>
+</div>
+</div>
+
+<pre><span id="VALupdate"><span class="keyword">val</span> update</span> : <code class="type">float -> <a href="Game_state.html#TYPEt">t</a> -> <a href="Game_state.html#TYPEt">t</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">update delta_time st</code> is the new, updated state based on <code class="code">st</code> 
+   after <code class="code">delta_time</code> has passed</p>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,8 @@
+{
+	"move_left": "j",
+	"move_right": "l",
+	"hard_drop": "i",
+	"rotate_right": "x",
+	"rotate_left": "z",
+	"hold": "c"
+}
